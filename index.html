@@ -7,78 +7,255 @@
 		<meta name="author" content="">
 		<link rel="icon" href="favicon.ico">
 
-		<title>Starter Template for Bootstrap</title>
+		<title>Top navbar example for Bootstrap</title>
 
 		<!-- Bootstrap core CSS -->
 		<link href="dist/css/bootstrap.min.css" rel="stylesheet">
 
 		<!-- Custom styles for this template -->
 		<link href="assets/css/style.css" rel="stylesheet">
+
+		<link rel="stylesheet" href="https://openlayers.org/en/v4.2.0/css/ol.css" type="text/css">
 	</head>
 
 	<body>
-
-		<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-			<a class="navbar-brand" href="#">Navbar</a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-
-			<div class="collapse navbar-collapse" id="navbarsExampleDefault">
-				<ul class="navbar-nav mr-auto">
-					<li class="nav-item active">
-						<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#">Link</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link disabled" href="#">Disabled</a>
-					</li>
-					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-						<div class="dropdown-menu" aria-labelledby="dropdown01">
-							<a class="dropdown-item" href="#">Action</a>
-							<a class="dropdown-item" href="#">Another action</a>
-							<a class="dropdown-item" href="#">Something else here</a>
-						</div>
-					</li>
-				</ul>
-				<form class="form-inline my-2 my-lg-0">
-					<input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-					<button class="btn btn-outline-success my-2 my-sm-0" type="submit">
-						Search
+		<section id="header">
+			<div class="container">
+				<nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
+					<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
 					</button>
-				</form>
+					<a class="navbar-brand" href="#"><img src="assets/img/logo_inmet.png" /></a>
+					<div class="collapse navbar-collapse" id="navbarCollapse">
+						<ul class="navbar-nav ml-auto">
+							<li class="nav-item active">
+								<a href="#" class="nav-link"><i class="fa fa-home"></i> Início <span class="sr-only">(current)</span></a>
+							</li>
+							<li class="nav-item">
+								<a href="#" class="nav-link"><i class="fa fa-cloud"></i> Tempo</a>
+							</li>
+							<li class="nav-item">
+								<a href="#" class="nav-link"><i class="fa fa-history"></i> Clima</a>
+							</li>
+							<li class="nav-item">
+								<a href="#" class="nav-link"><i class="fa fa-bar-chart"></i> Agrometeorologia</a>
+							</li>
+							<li class="nav-item dropdown">
+
+								<a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-info"></i> Sobre</a>
+								<div class="dropdown-menu" aria-labelledby="dropdown01">
+									<a class="dropdown-item" href="#">Action</a>
+									<a class="dropdown-item" href="#">Another action</a>
+									<a class="dropdown-item" href="#">Something else here</a>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</nav>
 			</div>
-		</nav>
+		</section>
+		<section id="hero">
+			<div class="weather container">
+				<div class="input-group mb-4">
+					<span class="input-group-btn">
+						<button class="btn btn-primary" type="button">
+							<i class="fa fa-search"></i>
+						</button> </span>
+					<input type="text" class="ph form-control" placeholder="Brasília" aria-label="Brasília">
+				</div>
+				<div class="row">
 
-		<div class="container">
-
-			<div class="starter-template">
-				<h1>Bootstrap starter template</h1>
-				<p class="lead">
-					Use this document as a way to quickly start any new project.
-					<br>
-					All you get is this text and a mostly barebones HTML document.
-				</p>
+					<div class="col-md-3">
+						<h4>Hoje, 11am</h4>
+						<table width="100%">
+							<tr>
+								<td rowspan="2"><img class="uk-float-left icon-hero" src="assets/img/icons/35.png" title="Parcialmente nublado"></td>
+								<td align="center"><i class="fa fa-arrow-up"></i> 29&#176;</td>
+								<td  align="center"class="tempeture-min"><i class="fa fa-arrow-down"></i> 22&#176;</td>
+							</tr>
+							<tr>
+								<td colspan="2">Parcialmente nublado.</td>
+							</tr>
+						</table>
+						<table width="100%" class="uk-text-center uk-margin-top">
+							<tr align="center">
+								<td><i class="fa fa-sun-o"></i></td>
+								<td><i class="fa fa-moon-o"></i></td>
+								<td><i class="fa fa-tint lightblue"></i></td>
+								<td><i class="fa fa-tint"></i></td>
+								<td><i class="fa fa-send-o"></i></td>
+							</tr>
+							<tr align="center">
+								<td>06:59</td>
+								<td>18:53</td>
+								<td>55%</td>
+								<td>95%</td>
+								<td>2m/s <i class="fa fa-arrow-right"></i></td>
+							</tr>
+						</table>
+					</div>
+					<div class="nextDays col-md-6">
+						<div class="row">
+							<div class="col-4 panel">
+								<h4>Tarde</h4>
+								<img src="assets/img/icons/35.png" width="30px" title="Parcialmente nublado">
+								<br>
+								<i class="fa fa-arrow-up"></i> 18&#176; <span class="tempeture-min"><i class="fa fa-arrow-down"></i> 8&#176;</span>
+							</div>
+							<div class="col-4 panel">
+								<h4>Noite</h4>
+								<img src="assets/img/icons/35.png" width="30px" title="Parcialmente nublado">
+								<br>
+								<i class="fa fa-arrow-up"></i> 18&#176; <span class="tempeture-min"><i class="fa fa-arrow-down"></i> 8&#176;</span>
+							</div>
+							<div class="col-4 panel">
+								<h4>Manhã</h4>
+								<img src="assets/img/icons/35.png" width="30px" title="Parcialmente nublado">
+								<br>
+								<i class="fa fa-arrow-up"></i> 18&#176; <span class="tempeture-min"><i class="fa fa-arrow-down"></i> 8&#176;</span>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-4 panel">
+								<h4>Sábado</h4>
+								<img src="assets/img/icons/35.png" width="30px" title="Parcialmente nublado">
+								<br>
+								<i class="fa fa-arrow-up"></i> 18&#176; <span class="tempeture-min"><i class="fa fa-arrow-down"></i> 8&#176;</span>
+							</div>
+							<div class="col-4 panel">
+								<h4>Domingo</h4>
+								<img src="assets/img/icons/35.png" width="30px" title="Parcialmente nublado">
+								<br>
+								<i class="fa fa-arrow-up"></i> 18&#176; <span class="tempeture-min"><i class="fa fa-arrow-down"></i> 8&#176;</span>
+							</div>
+							<div class="col-4 panel">
+								<h4>Segunda</h4>
+								<img src="assets/img/icons/35.png" width="30px" title="Parcialmente nublado">
+								<br>
+								<i class="fa fa-arrow-up"></i> 18&#176; <span class="tempeture-min"><i class="fa fa-arrow-down"></i> 8&#176;</span>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3">
+						METEOGRAMA
+					</div>
+				</div>
 			</div>
+		</section>
+		<section id="maps">
+			<nav class="navbar navbar-toggleable-xl navbar-inverse bg-primary">
+				<div class="container">
+					<div class="navbar-collapse collapse">
+						<ul class="navbar-nav">
+							<li class="nav-item">
+								<a class="nav-link" href="#">Previsão</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#">Previsão 2</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#">Alertas</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#">Estações</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#">Satélite</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#">Temperatura</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#">Chuvas</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+			<div class="map" id="map"></div>
+			<div id="popup"></div>
+		</section>
 
-		</div><!-- /.container -->
+		<!-- Section Content -->
+		<section id="reports">
+			<div class="container my-4">
+				<!-- Three columns of text below the carousel -->
+				<h1 class="mb-4">Análises semanais</h1>
+				<div class="row">
+					<div class="col-lg-4">
+						<h4>27 de setembro de 2017</h4>
+						<p>
+							Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+						</p>
+						<p>
+							<a class="btn btn-secondary" href="#" role="button">Completa &raquo;</a>
+						</p>
+					</div><!-- /.col-lg-4 -->
+					<div class="col-lg-4">
+						<h4>27 de setembro de 2017</h4>
+						<p>
+							Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+						</p>
+						<p>
+							<a class="btn btn-secondary" href="#" role="button">Completa &raquo;</a>
+						</p>
+					</div><!-- /.col-lg-4 -->
+					<div class="col-lg-4">
+						<h4>27 de setembro de 2017</h4>
+						<p>
+							Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+						</p>
+						<p>
+							<a class="btn btn-secondary" href="#" role="button">Completa &raquo;</a>
+						</p>
+					</div><!-- /.col-lg-4 -->
 
-		<!-- FONT AWESOME -->
-		<script src="https://use.fontawesome.com/68490ea35a.js"></script>
+				</div><!-- /.row -->
+			</div><!-- /.container -->
+		</section>
+		<footer>
+			<div class="container mb-4">
+				&copy; INMET 2017 - Todos os direitos reservados.
+			</div><!-- /.container -->
+		</footer><BR><BR><BR><BR>
+		<!-- End Section Content -->
+
 		<!-- Bootstrap core JavaScript
 		================================================== -->
 		<!-- Placed at the end of the document so the pages load faster -->
-		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+		<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
 		<script>
 			window.jQuery || document.write('<script src="assets/js/vendor/jquery.min.js"><\/script>')
 		</script>
-		<script src="assets/js/vendor/popper.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
 		<script src="dist/js/bootstrap.min.js"></script>
 		<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 		<script src="assets/js/ie10-viewport-bug-workaround.js"></script>
+
+		<script src="https://use.fontawesome.com/68490ea35a.js"></script>
+
+		<script src="https://openlayers.org/en/v4.2.0/build/ol.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			var map = new ol.Map({
+				target : 'map',
+				layers : [new ol.layer.Tile({
+					source : new ol.source.OSM()
+				})],
+				view : new ol.View({
+					center : ol.proj.fromLonLat([-48.0778487, -15.7751266]),
+					zoom : 9
+				})
+			});
+			var map = new ol.Map({
+				target : 'map2',
+				layers : [new ol.layer.Tile({
+					source : new ol.source.OSM()
+				})],
+				view : new ol.View({
+					center : ol.proj.fromLonLat([-46.625290, -23.533773]),
+					zoom : 4
+				})
+			});
+		</script>
 	</body>
 </html>
-

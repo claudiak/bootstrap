@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css?family=Droid+Sans');
 @import url('https://fonts.googleapis.com/css?family=Fjalla+One|Teko');
 // COLOURS
@@ -52,13 +51,14 @@ a {
 
 //HEADER
 #header{
-  .uk-navbar-container{
-    background: black;
-      a{
+  background: black;
+  .bg-inverse{background: black !important;}
+  .navbar-nav{
+      a{ 
         font-family: 'Teko', sans-serif;
         color: white;
         text-transform:uppercase;
-        font-size:@body*1.9 ;
+        font-size:@body*1.5 ;
         letter-spacing: 1px;
         .soft-transition;
         &:hover{
@@ -74,8 +74,18 @@ a {
 #hero{
   background: @darkblue;
   color: white;
+  font-size: @body;
+  padding: @body*2 0;
   .weather{
-    h1{
+  // search
+  .input-group{
+    input{background: rgba(0,0,0,0.1);}
+    ::-webkit-input-placeholder {color: white;}
+     :-moz-placeholder { /* Firefox 18- */ color: white;}
+    ::-moz-placeholder {  /* Firefox 19+ */ color: white;}
+     :-ms-input-placeholder {color: white;}
+  }
+     h1{
       font-size: @body*2;
       color: white;
       margin: 0;
@@ -86,7 +96,7 @@ a {
       font-size: @body*2;
     }
     .teaser{
-      font-size: @body*1.5;
+      font-size: @body*1;
       font-weight: bold;
       span{font-size: @body;margin-right: 2px;}
       i.fa-sun-o{color: @gold;}
@@ -98,72 +108,38 @@ a {
       img{width: 50px;}
       .tempeture-min{font-size: @body*1.5;}  
     }
-  }
-  //SEARCH
-  nav{
-    background: darken(@darkblue,5%);
-    .nav-overlay{
-      a{
-        font-size:@body*2.5;
-        color: white;
-      }
-    }
-    ::-webkit-input-placeholder {color: white;}
-     :-moz-placeholder { /* Firefox 18- */ color: white;}
-    ::-moz-placeholder {  /* Firefox 19+ */ color: white;}
-     :-ms-input-placeholder {color: white;}
-  }
-  .nextDays{
-    i{font-size: 10px;}
+    .nextDays{
     h4{font-size: @body;}
     img{width: 30px;}
+    .panel{
+      padding: 10px;
+      text-align: center;
+      background: rgba(0,0,0,0.1);
+      border: 3px solid @darkblue;
+    }
+  }
   }
 }
 
 
-#navMaps{
-  .uk-navbar{
-    padding: 0;
-    background: darken(@darkblue,5%);
+#maps{
+  .bg-primary{
+    background: darken(@darkblue,5%) !important;
     height: 60px;
     border-top: 1px solid white;
-    .uk-navbar-nav{
-      a{
-        color: #597398;
-        height: 60px;
-        &:hover{
-          background: none;
-          color: lighten(@darkblue,70%);
-        }
-      }
+  }
+  .nav-link{
+    font-family: 'Teko', sans-serif;
+    text-transform:uppercase;
+    font-size:@body*1.5;
+    letter-spacing: 1px;
+    color: #597398;
+    padding-right: @body*2;
+    &:hover{
+      background: none;
+      color: lighten(@darkblue,70%);
     }
-    .navMaps{
-      padding: 0 0;;
-      margin: 0;
-      margin-left: @body;
-
-      span{
-        font-size: @body*1.5;
-        font-family: 'Teko', sans-serif;
-        letter-spacing: 1px;
-      }
-      i{
-        margin-right: @body;
-      }
-      .active{
-        background: none;
-        margin: 0;
-        a{
-          margin: 0;
-          color: white;
-          &:hover{
-            color: lighten(@darkblue,60%);
-            background: none;
-          }
-        }
-      }
-    }
-  }  
+  }
 }
 
 // GRAPHICS
