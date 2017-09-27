@@ -1,0 +1,185 @@
+
+@import url('https://fonts.googleapis.com/css?family=Droid+Sans');
+@import url('https://fonts.googleapis.com/css?family=Fjalla+One|Teko');
+// COLOURS
+@gray: #424240;
+@blue: #165abf;
+@darkblue: #00327c;
+@gold: #fce118;
+
+// TYPOGRAPHY
+@body: 13px;
+@font-face {
+  font-family: 'Teko', sans-serif;
+  src: url('https://fonts.googleapis.com/css?family=Fjalla+One|Teko');
+}
+// MIXINS
+.soft-transition(){
+  transition: all 0.5s;
+}
+
+.gradient (@startColor: @darkblue, @endColor: blue) {
+  background-color: @startColor;
+  background: -webkit-gradient(linear, left top, left bottom, from(@startColor), to(@endColor));
+  background: -webkit-linear-gradient(top, @startColor, @endColor);
+  background: -moz-linear-gradient(top, @startColor, @endColor);
+  background: -ms-linear-gradient(top, @startColor, @endColor);
+  background: -o-linear-gradient(top, @startColor, @endColor);
+}
+// resetting the font on
+// all main elements
+html, body, header, main, footer, 
+section, article, aside, nav, 
+h1, h2, h3, h4, h5, h6, 
+div, ul, ol, li, blockquote, 
+strong, em, span, b, i, a, 
+form, input, textarea, button {
+  font-family: 'Droid Sans', sans-serif;
+}
+
+// GENERAL
+a {
+  color: @blue;
+  text-decoration: none;
+  .soft-transition;
+  
+  &:hover {
+    color: @darkblue;
+    text-decoration: none;
+  }
+}
+.lightblue{color: lighten(@blue, 40%)}
+
+//HEADER
+#header{
+  .uk-navbar-container{
+    background: black;
+      a{
+        font-family: 'Teko', sans-serif;
+        color: white;
+        text-transform:uppercase;
+        font-size:@body*1.9 ;
+        letter-spacing: 1px;
+        .soft-transition;
+        &:hover{
+          background: rgba(255,255,255,0.8);
+          color: black;
+        }
+        i{margin-right: @body;}
+      }
+    }
+}
+
+// HERO
+#hero{
+  background: @darkblue;
+  color: white;
+  .weather{
+    h1{
+      font-size: @body*2;
+      color: white;
+      margin: 0;
+    }
+    h4{
+      margin: 0 0 10px 0;
+      color: @gold;
+      font-size: @body*2;
+    }
+    .teaser{
+      font-size: @body*1.5;
+      font-weight: bold;
+      span{font-size: @body;margin-right: 2px;}
+      i.fa-sun-o{color: @gold;}
+      i.fa-arrow-right{
+        -ms-transform: rotate(57deg);
+        -webkit-transform: rotate(57deg);
+        transform: rotate(57deg);        
+      }
+      img{width: 50px;}
+      .tempeture-min{font-size: @body*1.5;}  
+    }
+  }
+  //SEARCH
+  nav{
+    background: darken(@darkblue,5%);
+    .nav-overlay{
+      a{
+        font-size:@body*2.5;
+        color: white;
+      }
+    }
+    ::-webkit-input-placeholder {color: white;}
+     :-moz-placeholder { /* Firefox 18- */ color: white;}
+    ::-moz-placeholder {  /* Firefox 19+ */ color: white;}
+     :-ms-input-placeholder {color: white;}
+  }
+  .nextDays{
+    i{font-size: 10px;}
+    h4{font-size: @body;}
+    img{width: 30px;}
+  }
+}
+
+
+#navMaps{
+  .uk-navbar{
+    padding: 0;
+    background: darken(@darkblue,5%);
+    height: 60px;
+    border-top: 1px solid white;
+    .uk-navbar-nav{
+      a{
+        color: #597398;
+        height: 60px;
+        &:hover{
+          background: none;
+          color: lighten(@darkblue,70%);
+        }
+      }
+    }
+    .navMaps{
+      padding: 0 0;;
+      margin: 0;
+      margin-left: @body;
+
+      span{
+        font-size: @body*1.5;
+        font-family: 'Teko', sans-serif;
+        letter-spacing: 1px;
+      }
+      i{
+        margin-right: @body;
+      }
+      .active{
+        background: none;
+        margin: 0;
+        a{
+          margin: 0;
+          color: white;
+          &:hover{
+            color: lighten(@darkblue,60%);
+            background: none;
+          }
+        }
+      }
+    }
+  }  
+}
+
+// GRAPHICS
+#graphics{
+   background: @darkblue;
+   h1{
+     color: @gold;
+     font-size: @body*3;
+     text-transform:uppercase;
+     padding-top: @body*2;
+     margin-bottom: 0;
+     
+   }
+   h2{
+    font-size: @body*1.5;
+    margin: @body 0 @body*1.5 0;
+     color: white;
+   }
+}
